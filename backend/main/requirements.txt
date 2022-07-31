@@ -6,4 +6,7 @@ Flask-Script==2.0.6
 Flask-Cors==3.0.9
 requests==2.25.0
 mysqlclient==2.0.1
+Jinja2==3.0.3
+itsdangerous==2.0.1
+werkzeug==2.0.3
 pika==1.1.0
