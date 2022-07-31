@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Product} from "../interfaces/product";
-
+import { NavLink } from "react-router-dom";
+import ProductsCreate from '../admin/ProductsCreate';
 const Main = () => {
     const [products, setProducts] = useState([] as Product[]);
 
@@ -36,6 +37,8 @@ const Main = () => {
     return (
         <main role="main">
             <div className="album py-5 bg-light">
+                <NavLink className="btn btn-primary" to="/admin/products/create"  >Create Products </NavLink>
+                <NavLink className="btn btn-primary" to="/admin/products">Products </NavLink>
                 <div className="container">
                     <div className="row">
                         {products.map(
@@ -48,14 +51,14 @@ const Main = () => {
                                                 <p className="card-text">{p.title}</p>
                                                 <div className="d-flex justify-content-between align-items-center">
                                                     <div className="btn-group">
-                                                        <button type="button"
+                                                        {/* <button type="button"
                                                                 className="btn btn-sm btn-outline-secondary"
                                                                 onClick={() => like(p.id)}
                                                         >
                                                             Like
-                                                        </button>
+                                                        </button> */}
                                                     </div>
-                                                    <small className="text-muted">{p.likes} likes</small>
+                                                    {/* <small className="text-muted">{p.likes} likes</small> */}
                                                 </div>
                                             </div>
                                         </div>
@@ -66,6 +69,7 @@ const Main = () => {
                     </div>
                 </div>
             </div>
+          
 
         </main>
     );

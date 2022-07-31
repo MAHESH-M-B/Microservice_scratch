@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Wrapper from "./Wrapper";
 import {Product} from "../interfaces/product";
 import {Link} from "react-router-dom";
-
+import { NavLink } from 'react-router-dom';
 const Products = () => {
     const [products, setProducts] = useState([]);
 
@@ -33,6 +33,8 @@ const Products = () => {
             <div className="pt-3 pb-2 mb-3 border-bottom">
                 <div className="btn-toolbar mb-2 mb-md-0">
                     <Link to='/admin/products/create' className="btn btn-sm btn-outline-secondary">Add</Link>
+                    <Link to='/' className="btn btn-sm btn-outline-secondary">Home</Link>
+
                 </div>
             </div>
 
@@ -40,10 +42,10 @@ const Products = () => {
                 <table className="table table-striped table-sm">
                     <thead>
                     <tr>
-                        <th>#</th>
+                        <th>Products</th>
                         <th>Image</th>
                         <th>Title</th>
-                        <th>Likes</th>
+                        {/* <th>Likes</th> */}
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -55,7 +57,7 @@ const Products = () => {
                                     <td>{p.id}</td>
                                     <td><img src={p.image} height="180"/></td>
                                     <td>{p.title}</td>
-                                    <td>{p.likes}</td>
+                                    {/* <td>{p.likes}</td> */}
                                     <td>
                                         <div className="btn-group mr-2">
                                             <Link to={`/admin/products/${p.id}/edit`}
