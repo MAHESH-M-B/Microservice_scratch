@@ -2,7 +2,8 @@ import pika, json
 
 from main import Product, db
 
-params = pika.URLParameters('amqp://guest:guest@host.docker.internal:5672?connection_attempts=10&retry_delay=10')
+# params = pika.URLParameters('amqp://guest:guest@host.docker.internal:5672?connection_attempts=10&retry_delay=10')
+params = pika.URLParameters('amqp://guest:guest@host.docker.internal:5672')
 
 connection = pika.BlockingConnection(params)
 
